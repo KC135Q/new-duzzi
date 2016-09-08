@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div id="container">
+    <div class="jumbotron">
+        <div id="dvImportSegments" class="fileupload">
+            <fieldset>
+                <legend>Upload your CSV File</legend>
+                <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+            </fieldset>
+        </div>
+        <div id="download" class="row"></div>
+        <div class="row">
+            <div class="row">
+                <h2>Directions</h2>
+            </div>
+            <div class="row col-sm-12">
+                <h3>Step one</h3>
+                <img src="images/step-one-file-info.png" alt="Step One">
+                <p>During photo editing in Adobe Photoshop: Select File -> File Info (Alt + Shift+Ctrl+I).  Make sure you save the file after you have updated the File Info. NOTE - Make sure that the `for web` image is saved after the File Info has been updated.</p>
+            </div>
+            <div class="row">
+                <h3>Step two</h3>
+                <p>Document Title should main subject of the photo which is usually the name of the driver, Description may be filled out, but Keywords are critical.  Make sure to use semicolons (;) to separate each keyword.  This is to avoid conflict later on when we have a comma separated value file.</p>
+                <img src="images/step-two-file-info.png" alt="Step Two">
+            </div>
+                <h3>Step three</h3>
+                <img src="images/step-three-MetaData.png" alt="Step Three">
+                <p>Using Adobe Bridge, highlight all the images you want to import at this time by clicking on them with the mouse then click on the `MetaData` --> `Extract MetaData` menu item.</p>
+            <div class="row">
+                <h3>Step four</h3>
+                <img src="images/step-four-Extract-Data.png" alt="Step Four">
+                <p>In the `Extract Data` window, select Keywords, Description, Headline, Title and make sure the file tab selected is CSV File then click on the `Extract Data` button.  Once the extraction is complete, you should get an `Extract Complete` notification window.  The results of the extraction are saved on the Desktop and will look something like this: `Desktop/Extract Metadata-6_36_53PM.csv`</p>
+                <p>FYI - Should you need to re-install the Meta Data Menu, you may download it <a href='files/Extract Metadata.txt' target="_blank">here</a>  I haven't been able to find it on the web, but according to the file the author is Paul Riggot - thanks Paul!  Once you have downloaded it, change the filename extension from txt to jsx then place it in the Users\Admin\AppData\Roaming\Adobe\Bridge CC\Startup Scripts.</p>
+            </div>
+            <div class="row">
+                <h3>Step five</h3>
+                <p>Click on the `Choose File` button at the very top of this page and browse to and select the newly created `Extract metadata-x-xx-xx.csv` file.  After you have selected the file, this page automatically creates a Product csv and Variations csv file and provides links for you to download them.  The page also shows you that you have successfully imported information from the `Extract metadata` file selected.</p>
+                <img src='images/step-five-import-complete.png' target='_blank'>
+            </div>
+            <div class="row">
+                <h3>Step six</h3>
+                <p>Now click on the `Download myProducts.csv` and `Download myVariations.csv` links at the very top of this page.  These files are automatically stored in your downloads directory once you click on them.</p>
+                <img src='images/step-six-download-ready.png'>
+            </div>
+            <div class="row">
+                <h3>Step seven</h3>
+                <p>Now for the WordPress part.  Go to the login page of the website <a href='http://danieleamaduzziarchive.com/test-wp/wp-login.php' target='_blank'>here</a>.</p>
+            </div>
+            <div class="row">
+                <h3>Step Eight</h3>
+                <p>From the left menu of the dashboard select `Media -> Add New.` Click on the `Select Files` button and add all of the photos that you are importing today</p>
+                <img src='images/step-seven-add-new-image.png'>
+                <p>Once that is complete, return to the dashboard and select the WooCommerce --> CSV Import option.  Once the CSV Import page loads, click on the `Import Products` button in the `Import Product CSV` section.  <i>{If you don't see this section, make sure the `Import Products` tab is selected and not `Export Products` at the top of the page}.</i></p>
+                <img src='images/step-eight-csv-import.png'>
+            </div>
+            <div class="row">
+                <h3>Step Nine</h3>
+                <p>You should now be on the `Import Products` page where you can click on the `Choose File` button.  After clicking on the Choose File button, naviate to the downloads directory and select the myProducts.csv file.  Click `OK` and then select the `Upload file and import` button at the bottom of the page.</p>
+                <img src="images/step-nine-csv-import-page.png">
+            </div>
+            <div class="row">
+                <h3>Step Ten</h3>
+                <p>Now that you are on the actual import page, make sure the fields Map up as shown below, then click on the submit button.</p>
+                <img src="images/step-ten-map-fields.png">
+            </div>
+            <div class="row">
+                <h3>Step Eleven</h3>
+                <p>Now that you have the products online, it is time to add the variations.  Go back to the WooCommerc --> CSV Import option again.  Now click on the `Import Variations` button.  Once the import variations page loads, use the `Choose File` button, navigate to the downloads directory, select the myVariations.csv file and click on the `Upload file and import` button.  When the Map Fields page shows up, match them as shown below, then click on the `Submit` button.  That`s is - now you can check out the store to make sure your new images loaded properly.</p>
+                <img src="images/step-eleven-map-variation-fields.png">
+            </div>
+            <div class="row">
+                <h1>Have a great day!</h1><p>Please direct any questions to <a href="mailto:d.a.kaltenbaugh@gmail.com">Dan Kaltenbaugh</a></p>
+            </div>
+        </div><!-- end row -->
+    </div>
+    </div><!-- end container -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">  // Program code 09/03/2016
+$(document).ready(function() {
+    // Keywords = post_excerpt, Description = post_content
+    var columnNames = {'filename': 0, 'post_excerpt': 1, 'post_content': 2,};
+
+    // The event listener for the file upload
+    document.getElementById('txtFileUpload').addEventListener('change', upload, false);
+
+    // Method that checks that the browser supports the HTML5 File API
+    function browserSupportFileUpload() {
+        var isCompatible = false;
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            isCompatible = true;
+        }
+        return isCompatible;
+    }
+
+    // Set the filenameColumn to the row that contains the filename in the column - only called before you build the product file and the variation file
+    function setFilenameColumns(data) {  
+        // Split the header row into an array
+        var headers = data[0];
+        // iterate through the array to see which index contains the FileName
+        for (header in headers) {
+            switch(headers[header]) {
+                case('FileName'):
+                    columnNames['filename'] = parseInt(header, 10);
+                    break;
+                case('Keywords'):
+                    columnNames['post_excerpt'] =parseInt( header, 10);
+                    break;
+                case('Description'):
+                    columnNames['post_content'] = parseInt(header, 10);
+                    break;
+                default:
+                    break;            
+            }
+            // if (headers[header] == 'FileName') {
+            //     filenameColumn = header;
+            //     console.log("Found the filename in column " + filenameColumn);
+            // }
+        }
+        console.log(columnNames);
+    }
+
+    function buildProductFile(data) {
+        // Identify Filename Column (array index)
+        // Parse Filename into prefix (number & name) and filetype
+        // post_title becomes name {space} number
+        // All we need in the input file is FileName, Keywords, and Description
+        // post_excerpt = Keywords
+        // post_content = Description
+        // post_name = prefix only
+        // sku = number
+        // post_title, post_name, post_excerpt, post_content, sku, attribute:Material, attribute_data:Material, attribute:Size, attribute_data:Size
+        // attribute:Material = Print | Digital High Resolution | Canvas (rolled in a tube)
+        // attribute_data:Material = 0 | 0 | 1
+        // attribute:Size = 8x12 (20x30cm) | 12x18 (30x45cm) | 16x24 (40x60cm) | 20x28 (50x70cm) | 24x36 (60x90cm)
+        // CSV Order = 24x36 (60x90cm), 12x18 (30x45cm), 16x24 (40x60cm), 20x28 (50x70cm), 8x12 (20x30cm), 12x18 (30x45cm), 16x24 (40x60cm), 20x28 (50x70cm), 24x36 (60x90cm), 8x12 (20x30cm), 12x18 (30x45cm), 16x24 (40x60cm), 20x28 (50x70cm)
+        // attribute_data:Size 
+        setFilenameColumns(data);
+        // console.log("Filename column: "+ filenameColumn);
+        var productString = 'post_title,tax:product_type,images/gallery,category,post_tag,post_excerpt,sku,attribute:material,attribute_data:material,attribute:size,attribute_data:size\n';
+        for (rows in data) {
+            if (rows != 0) {
+                tmpFileName = data[rows][columnNames['filename']];
+                fileName = tmpFileName.replace(" ", "-");
+                console.log("Filename: " + tmpFileName);
+                nameStart = tmpFileName.lastIndexOf('-');
+                extStart = tmpFileName.lastIndexOf('.');
+                tmpSKU =  "DA-" + tmpFileName.substring(0, nameStart );
+                tmpName = tmpFileName.substring(nameStart+1, extStart).replace(/\b\w/g, l => l.toUpperCase());
+                console.log("Title: " + tmpName + " " + tmpSKU);
+                productString += tmpName + " " + tmpSKU + ",variable," + fileName + "," + tmpName + "," + data[rows][columnNames['post_excerpt']] + "," + data[rows][columnNames['post_content']];
+                productString += "," + tmpSKU  + "," + "Print | Digital High Resolution | Canvas (rolled in a tube), 0 | 0 | 1, 8x12 (20x30cm) | 12x18 (30x45cm) | 16x24 (40x60cm) | 20x28 (50x70cm) | 24x36 (60x90cm), 1|0|1 \n";
+            }
+        }
+        return productString;        
+    }
+
+    function buildVariationFile(data) {
+        var printOptions = ['75,Print,24x36 (60x90cm)', '50,Canvas (rolled in a tube),12x18 (30x45cm)', '65,Canvas (rolled in a tube),16x24 (40x60cm)', '85,Canvas (rolled in a tube),20x28 (50x70cm)', '20,Digital High Resolution,8x12 (20x30cm)', '30,Digital High Resolution,12x18 (30x45cm)', '40,Digital High Resolution,16x24 (40x60cm)', '55,Digital High Resolution,20x28 (50x70cm)', '70 ,Digital High Resolution,24x36 (60x90cm)', '25,Print,8x12 (20x30cm)', '35,Print,12x18 (30x45cm)', '45,Print,16x24 (40x60cm)', '60,Print,20x28 (50x70cm)'];
+
+        // Identify Filename Column === filenameColumn global variable
+        // console.log("Filename column2: "+ filenameColumn);
+        // parent_sku = number
+        // regular price 75, 50, 65, 85, 20, 30, 40, 55, 70, 25, 35, 45, 60
+        // meta:attribute_material:     Print,  Canvas(rolled in a tube) (x3), Digital High Resolution (x5), Print (x4)
+        // meta:attribute_size:
+        // productString = "parent_sku, "
+        var productString = 'parent_sku,sku,regular_price,meta:attribute_material,meta:attribute_size\n'; 
+        for (rows in data) {
+            if (rows != 0) {
+                tmpFileName = data[rows][columnNames['filename']];
+                nameStart = tmpFileName.lastIndexOf('-');
+                tmpSKU =  "DA-" + tmpFileName.substring(0, nameStart );
+                skuCtr = 1;
+                for (pOption in printOptions) {
+                    productString += tmpSKU + "," + tmpSKU + "-" + skuCtr + "," + printOptions[pOption] + "\n";
+                    skuCtr++;
+                }
+            }
+        }
+        return productString;        
+    }
+
+    // Method that reads and processes the selected file
+    function upload(evt) {
+        if (!browserSupportFileUpload()) {
+            alert('The File APIs are not fully supported in this browser!');
+        } else {
+            var data = null;
+            var file = evt.target.files[0];
+            var reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = function(event) {
+                var csvData = event.target.result;
+                data = $.csv.toArrays(csvData);
+                if (data && data.length > 0) {
+                    alert('Imported -' + data.length + '- rows successfully!');
+                    // Build the product common separated value files
+                    pcsvf = buildProductFile(data);
+                    // Make the product file available for download
+                    download('myProducts.csv', pcsvf);
+                    // Build the product variation files
+                    vcsvf = buildVariationFile(data);
+                    // Make the variation file available for download
+                    download('myVariations.csv', vcsvf);
+                } else {
+                    alert('No data to import!');
+                }
+            };
+            reader.onerror = function() {
+                alert('Unable to read ' + file.fileName);
+            };
+        }
+    }
+
+    function download(fileName = 'myFileName.csv', csv = 'data1, data2, data3\r\ndata4,data5,data6\r\ndata7,data8,data9\r\n') {
+        a=document.createElement('a');
+        a.textContent='Download ' + fileName;
+        a.download=fileName;
+        a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+        d=document.createElement('div');
+        d.appendChild(a);
+        $("#download").append(d);
+        // document.body.appendChild(d);
+    }
+});
+</script>    
+</body>
+</html>
